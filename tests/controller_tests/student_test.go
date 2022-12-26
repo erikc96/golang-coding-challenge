@@ -74,7 +74,7 @@ func (suite *StudentSuite) TestStudentByIdRoute() {
 	req, _ := http.NewRequest("GET", "/students/Alfredo.Pena", nil)
 	suite.Router.ServeHTTP(suite.Response, req)
 
-	expected := `{"Id":"Alfredo.Pena","AverageScore":"1.00","Results":[{"examId":1,"score":"1.000000"},{"examId":2,"score":"1.000000"}]}`
+	expected := `{"Id":"Alfredo.Pena","AverageScore":"1.00","Results":[{"examId":1,"score":"1.00"},{"examId":2,"score":"1.00"}]}`
 
 	suite.Equal(http.StatusOK, suite.Response.Code)
 	suite.Equal(expected, suite.Response.Body.String())
@@ -85,7 +85,7 @@ func (suite *StudentSuite) TestStudentByIdRouteTwo() {
 	req, _ := http.NewRequest("GET", "/students/Arthur.Morgan", nil)
 	suite.Router.ServeHTTP(suite.Response, req)
 
-	expected := `{"Id":"Arthur.Morgan","AverageScore":"0.49","Results":[{"examId":1,"score":"0.770379"},{"examId":2,"score":"0.200000"}]}`
+	expected := `{"Id":"Arthur.Morgan","AverageScore":"0.49","Results":[{"examId":1,"score":"0.77"},{"examId":2,"score":"0.20"}]}`
 
 	suite.Equal(http.StatusOK, suite.Response.Code)
 	suite.Equal(expected, suite.Response.Body.String())

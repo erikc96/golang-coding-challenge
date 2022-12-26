@@ -132,7 +132,7 @@ func (s StudentController) GetById(c *gin.Context) {
 
 		result := Result{
 			ExamId: studentExam.ExamId,
-			Score:  studentExam.Score,
+			Score:  fmt.Sprintf("%.2f", score),
 		}
 		results = append(results, result)
 
